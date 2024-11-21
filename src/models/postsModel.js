@@ -10,3 +10,9 @@ export async function getAllPosts(){
 
     return colecao.find().toArray(); 
 }
+
+export async function createPost(newPost) {
+    const db = conexao.db("imersao-instabytes");
+    const colecao = db.collection("posts"); 
+    return colecao.insertOne(newPost);
+}
